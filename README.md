@@ -1,24 +1,31 @@
-# README
+# Class-Poller
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Example app for M1 Media Programming
 
-Things you may want to cover:
+## (Rails Dash: command in class 15/11/17 
 
-* Ruby version
+    rails -v
+    ruby -v
+    gem install rails
+    rails new poller
+    cd poller/
+    git status
+    git add .
+    git commit -m "new rails app"
+    rails g scaffold Answer text:text
+    git add .
+    git commit -m "rails g scaffold Answer text:text"
+    rails s
+    history
 
-* System dependencies
+created Github Repository, then:
 
-* Configuration
+    git remote add origin git@github.com:htw-imi-m1-ws2017/class-poller.git
+    git push origin master
 
-* Database creation
 
-* Database initialization
+edited README.md
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    git add README.md
+    git commit -m "readme"
+    git push origin master
