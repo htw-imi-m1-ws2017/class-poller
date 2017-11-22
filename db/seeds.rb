@@ -6,8 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Poll.delete_all
-Poll.create(question: 'Which frameworks do you want to learn')
-Poll.create(question: 'What is your big question about web technology?')
-
-
-Answer.create(text: 'Wann kann man Rails nicht benutzen?')
+p1 = Poll.create(question: 'Which frameworks do you want to learn')
+p2 = Poll.create(question: 'What is your big question about web technology?')
+Answer.delete_all
+p1.answers.create(text: 'Rails')
+p1.answers.create(text: 'Node.js')
+p1.answers.create(text: 'vue.js')
+p2.answers.create(text: 'Wann kann man Rails nicht benutzen?')
