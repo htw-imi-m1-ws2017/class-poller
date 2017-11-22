@@ -14,7 +14,8 @@ class AnswersController < ApplicationController
 
   # GET /answers/new
   def new
-    @answer = Answer.new
+    @poll = Poll.find(params['poll_id'])
+    @answer = @poll.answers.build
   end
 
   # GET /answers/1/edit
@@ -24,11 +25,12 @@ class AnswersController < ApplicationController
   # POST /answers
   # POST /answers.json
   def create
-    @answer = Answer.new(answer_params)
+    @poll = Poll.find(params['poll_id'])
+    @answer = @poll.answers.build(answer_params)
 
     respond_to do |format|
       if @answer.save
-        format.html { redirect_to @answer, notice: 'Answer was successfully created.' }
+        format.html { redirect_to @poll, notice: 'Answer was successfully created.' }
         format.json { render :show, status: :created, location: @answer }
       else
         format.html { render :new }
@@ -69,6 +71,6 @@ class AnswersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def answer_params
-      params.require(:answer).permit(:text)
+      params.require(:answer).permit(:text,:poll_id)
     end
 end

@@ -10,6 +10,7 @@ class PollsController < ApplicationController
   # GET /polls/1
   # GET /polls/1.json
   def show
+    @answers = @poll.answers
   end
 
   # GET /polls/new

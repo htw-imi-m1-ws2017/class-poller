@@ -16,6 +16,8 @@
     <%= form.text_area :text, id: :answer_text %>
   </div>
 
+
+  <input type="hidden"  name="poll_id" value="<%= @poll.id %>" />
   <div class="actions">
     <%= form.submit %>
   </div>
