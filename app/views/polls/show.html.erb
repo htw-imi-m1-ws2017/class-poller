@@ -5,7 +5,7 @@
   <%= @poll.question %>?</strong>
 </p>
 
-<%= link_to('Add Answer', new_answer_path(poll_id: @poll))  %>
+<%= link_to('Add Answer', new_answer_path(poll_id: @poll), id: 'add-answer-link')  %>
 
 <table>
   <thead>
