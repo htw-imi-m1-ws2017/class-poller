@@ -11,6 +11,7 @@ describe Poll do
     visit poll_path(@poll)
     # note that i've introduced an id here to make the test less brittle
     click_on 'add-answer-link'
+    # save_and_open_page
     expect(page).to have_content "New Answer for #{@poll.question}"
     fill_in 'Text', with: 'Rails'
     # https://relishapp.com/rspec/rspec-expectations/docs/built-in-matchers/change-matcher
